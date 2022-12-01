@@ -8,13 +8,13 @@ public class StickyPlatformer : MonoBehaviour
     // if player on platform, player follow platform
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.SetParent(null);
+            collision.transform.SetParent(transform);
         }
         else
         {
-            collision.transform.SetParent(transform);
+            collision.transform.SetParent(null);
         }
     }
 

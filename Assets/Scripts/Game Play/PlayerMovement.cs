@@ -10,13 +10,19 @@ public class PlayerMovement : MonoBehaviour
     private float dirX;
     private enum MovementState { idle, running, jumping, falling };
 
+    [SerializeField] LayerMask jumpableGround;
+    [SerializeField] AudioSource jumpAudio;
+    // [SerializeField] AudioSource finishAudio;
+
     private Animator anim;
     private SpriteRenderer sprite;
     private Rigidbody2D rb;
+    private BoxCollider2D coll;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
@@ -50,11 +56,11 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        if (rb.velocity.y > .1f)
+        if (rb.velocity.y > 0.1f)
         {
             state = MovementState.jumping;
         }
-        else if (rb.velocity.y < -.1f)
+        else if (rb.velocity.y < -0.1f)
         {
             state = MovementState.falling;
         }
@@ -62,19 +68,27 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
     }
 
-    // mengatur cara player bergerak
+    // mengatur cara player berjalan
     private void MovePlayer()
     {
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * speedPlayer, rb.velocity.y);
     }
 
-    // mengatur cara palyer lompat
+    // mengatur cara player lompat
     private void JumpPlayer()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPlayer);
+            jumpAudio.Play();
         }
     }
+
+    // cek player apakah menyentuh tanah?
+    private bool IsGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround);
+    }
+
 }
