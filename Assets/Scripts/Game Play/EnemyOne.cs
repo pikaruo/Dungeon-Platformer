@@ -47,7 +47,8 @@ public class EnemyOne : MonoBehaviour
         }
 
         // make enemy move
-        rb.velocity = new Vector2(enemySpeed * Time.deltaTime, rb.velocity.y);
+        // rb.velocity = new Vector2(enemySpeed * Time.deltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(enemySpeed, rb.velocity.y);
     }
 
     private void Flip()
