@@ -10,6 +10,12 @@ public class Finish : MonoBehaviour
 
     private bool levelComplate = false;
 
+    private void Start()
+    {
+        this.gameObject.SetActive(false);
+    }
+
+    // selesai stage
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player") && !levelComplate)
@@ -20,6 +26,7 @@ public class Finish : MonoBehaviour
         }
     }
 
+    // berpindah scene jika selesai stage
     private void CompleteLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

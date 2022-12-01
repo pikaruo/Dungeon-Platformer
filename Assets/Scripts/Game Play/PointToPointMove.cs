@@ -12,15 +12,13 @@ public class PointToPointMove : MonoBehaviour
 
     private void Start()
     {
-        /*
-        setting the starting position platform using index startingPoint
-        */
+        // set pertama kali object bergerak
         transform.position = points[startingPoint].position;
     }
 
     private void Update()
     {
-        // checking distance of the platform and the point
+        // mengecek jarak platform dan point
         if (Vector2.Distance(transform.position, points[currentIndexPoint].position) < 0.1f)
         {
             currentIndexPoint++;

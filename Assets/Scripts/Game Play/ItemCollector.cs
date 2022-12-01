@@ -5,11 +5,25 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int items = 0;
 
-    [SerializeField] TMP_Text totalItemText;
+    [SerializeField] Finish finish;
+
+    [HideInInspector] public int items = 0;
+    [SerializeField] int minimumCollectItems;
+
+    [HideInInspector] public TMP_Text totalItemText;
     [SerializeField] AudioSource collectAudio;
 
+    private void Update()
+    {
+        // syarat object finish dimunculkan
+        if (items >= minimumCollectItems)
+        {
+            finish.gameObject.SetActive(true);
+        }
+    }
+
+    // player mengumpulkan items
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Item"))
