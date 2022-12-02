@@ -11,7 +11,7 @@ public class ItemCollector : MonoBehaviour
     [HideInInspector] public int items = 0;
     [SerializeField] int minimumCollectItems;
 
-    [HideInInspector] public TMP_Text totalItemText;
+    public TMP_Text totalItemText;
     [SerializeField] AudioSource collectAudio;
 
     private void Update()

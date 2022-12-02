@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    public TMP_Text totalLife;
+
+    [SerializeField] int maxLife;
+
     private Animator anim;
     private SpriteRenderer sprite;
     private Rigidbody2D rb;
@@ -20,6 +25,8 @@ public class PlayerLife : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         respownPoint = transform.position;
+
+        totalLife.text = "Life : " + maxLife;
     }
 
     // player mati jika tertabrak musuh
@@ -27,7 +34,15 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Enemy"))
         {
-            Die();
+            if (maxLife > 0)
+            {
+                Die();
+            }
+            else
+            {
+                // Invoke("RestarLevel", 2f);
+                RestarLevel();
+            }
         }
     }
 
@@ -47,6 +62,8 @@ public class PlayerLife : MonoBehaviour
         deathAudio.Play();
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
+        maxLife -= 1;
+        totalLife.text = "Life : " + maxLife;
     }
 
     // kembalikan ke check point jika player mati
@@ -56,6 +73,11 @@ public class PlayerLife : MonoBehaviour
         anim.SetInteger("state", 0);
         rb.bodyType = RigidbodyType2D.Dynamic;
         transform.position = respownPoint;
+    }
+
+    private void RestarLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
