@@ -5,19 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
-
     private Animator anim;
+    private SpriteRenderer sprite;
     private Rigidbody2D rb;
 
-    [SerializeField] ItemCollector itemCollector;
-
     [SerializeField] AudioSource deathAudio;
-    [SerializeField] AudioSource killEnemyAudio;
+    [SerializeField] AudioSource savePointAudio;
+
+    private Vector2 respownPoint;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+        respownPoint = transform.position;
     }
 
     // player mati jika tertabrak musuh
@@ -29,13 +31,13 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    // musuh mati jika terinjak player
-    private void OnTriggerEnter2D(Collider2D collision)
+    // save point
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collider.gameObject.CompareTag("Save Point"))
         {
-            RewardKillEnemy();
-            Destroy(collision.gameObject);
+            savePointAudio.Play();
+            respownPoint = transform.position;
         }
     }
 
@@ -47,18 +49,13 @@ public class PlayerLife : MonoBehaviour
         anim.SetTrigger("death");
     }
 
-    // fungsi reward jika bunuh musuh
-    private void RewardKillEnemy()
+    // kembalikan ke check point jika player mati
+    private void CheckPoint()
     {
-        itemCollector.items += 10;
-        itemCollector.totalItemText.text = "Items : " + itemCollector.items;
-        killEnemyAudio.Play();
-    }
-
-    // ulangi level jika player mati
-    private void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        sprite.flipX = false;
+        anim.SetInteger("state", 0);
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        transform.position = respownPoint;
     }
 
 }
