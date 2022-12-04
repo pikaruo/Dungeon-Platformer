@@ -7,7 +7,8 @@ TagManager:
   - Enemy
   - Item
   - Obstacle
-  - Save Point
+  - TriggerObstacle
+  - SavePoint
   layers:
   - Default
   - TransparentFX

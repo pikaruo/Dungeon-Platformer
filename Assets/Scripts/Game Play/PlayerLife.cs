@@ -49,7 +49,7 @@ public class PlayerLife : MonoBehaviour
     // save point
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Save Point"))
+        if (collider.gameObject.CompareTag("SavePoint"))
         {
             savePointAudio.Play();
             respownPoint = transform.position;
