@@ -40,7 +40,6 @@ public class PlayerLife : MonoBehaviour
             }
             else
             {
-                // Invoke("RestarLevel", 2f);
                 RestarLevel();
             }
         }
@@ -75,6 +74,7 @@ public class PlayerLife : MonoBehaviour
         transform.position = respownPoint;
     }
 
+    // restar level
     private void RestarLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

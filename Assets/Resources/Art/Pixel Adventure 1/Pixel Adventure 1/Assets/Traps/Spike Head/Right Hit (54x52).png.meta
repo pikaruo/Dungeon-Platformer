@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 6ed38972fd0f4024c91aca33394d3cdd
+guid: 75b1a2f7cb6173c4d826963a35f18512
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4303423874142921733
-    second: Blink (54x52)_0
+      213: -2696157268093233548
+    second: Right Hit (54x52)_0
   - first:
-      213: 7370585508839877132
-    second: Blink (54x52)_1
+      213: 3480149600529691005
+    second: Right Hit (54x52)_1
   - first:
-      213: 18105601139653782
-    second: Blink (54x52)_2
+      213: -5644974908550553447
+    second: Right Hit (54x52)_2
   - first:
-      213: 4110720337494812178
-    second: Blink (54x52)_3
+      213: -339516178220321277
+    second: Right Hit (54x52)_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -59,7 +59,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,11 +100,35 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blink (54x52)_0
+      name: Right Hit (54x52)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf03bd91a1f05da49a82d8cec006f78e
-      internalID: 4303423874142921733
+      spriteID: 2e607adbc7f48464388893e232c45a5e
+      internalID: -2696157268093233548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blink (54x52)_1
+      name: Right Hit (54x52)_1
       rect:
         serializedVersion: 2
         x: 54
@@ -139,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be9166cb19eae5e4cae0d9d8955ab751
-      internalID: 7370585508839877132
+      spriteID: ebf0af4d6a1a0694587a4986bc3a9d27
+      internalID: 3480149600529691005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blink (54x52)_2
+      name: Right Hit (54x52)_2
       rect:
         serializedVersion: 2
         x: 108
@@ -160,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bd42a8700c588c438b4c4d9ca33e60b
-      internalID: 18105601139653782
+      spriteID: 530c647ed99d6d74f8395ec4c67904bc
+      internalID: -5644974908550553447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blink (54x52)_3
+      name: Right Hit (54x52)_3
       rect:
         serializedVersion: 2
         x: 162
@@ -181,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5894c1068d0f5e4d8c65ca99dd164a5
-      internalID: 4110720337494812178
+      spriteID: 39afca675a26c0d45a9fde5d3bd6fd6b
+      internalID: -339516178220321277
       vertices: []
       indices: 
       edges: []
@@ -198,10 +222,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blink (54x52)_3: 4110720337494812178
-      Blink (54x52)_0: 4303423874142921733
-      Blink (54x52)_2: 18105601139653782
-      Blink (54x52)_1: 7370585508839877132
+      Right Hit (54x52)_3: -339516178220321277
+      Right Hit (54x52)_1: 3480149600529691005
+      Right Hit (54x52)_0: -2696157268093233548
+      Right Hit (54x52)_2: -5644974908550553447
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

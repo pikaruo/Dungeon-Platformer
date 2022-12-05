@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     // mengatur cara player lompat
     private void JumpPlayer()
     {
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPlayer);
             jumpAudio.Play();
