@@ -7,11 +7,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speedPlayer;
     [SerializeField] float jumpPlayer;
 
-    private float dirX;
-    private enum MovementState { idle, running, jumping, falling };
-
     [SerializeField] LayerMask jumpableGround;
     [SerializeField] AudioSource jumpAudio;
+
+    private float dirX;
+    private enum MovementState { idle, running, jumping, falling };
 
     private Animator anim;
     private SpriteRenderer sprite;
