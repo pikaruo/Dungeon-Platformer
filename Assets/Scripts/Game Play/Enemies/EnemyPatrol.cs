@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyOne : MonoBehaviour
+public class EnemyPatrol : MonoBehaviour
 {
     [SerializeField] float enemySpeed; //enemy speed
     [SerializeField] float radius; //value checking ground
