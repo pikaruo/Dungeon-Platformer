@@ -58881,13 +58881,13 @@ GameObject:
   - component: {fileID: 1884287624}
   - component: {fileID: 1884287625}
   - component: {fileID: 1884287630}
+  - component: {fileID: 1884287633}
   - component: {fileID: 1884287626}
   - component: {fileID: 1884287627}
   - component: {fileID: 1884287628}
   - component: {fileID: 1884287629}
   - component: {fileID: 1884287631}
   - component: {fileID: 1884287632}
-  - component: {fileID: 1884287633}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player

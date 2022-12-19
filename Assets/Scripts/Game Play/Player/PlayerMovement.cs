@@ -123,10 +123,10 @@ public class PlayerMovement : MonoBehaviour
             canDash = false;
             trailRenderer.emitting = true;
             dashingDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            if (dashingDir == Vector2.zero)
-            {
-                dashingDir = new Vector2(transform.localScale.x, 0);
-            }
+            // if (dashingDir == Vector2.zero)
+            // {
+            //     dashingDir = new Vector2(transform.localScale.x, 0);
+            // }
             StartCoroutine(StopDash());
         }
 
