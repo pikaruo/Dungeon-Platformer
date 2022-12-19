@@ -58995,6 +58995,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpAudio: {fileID: 1884287626}
+  dashVelocity: 14
+  dashTime: 0.5
 --- !u!95 &1884287623
 Animator:
   serializedVersion: 4

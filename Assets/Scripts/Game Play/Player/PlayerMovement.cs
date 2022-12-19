@@ -13,10 +13,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioSource jumpAudio;
 
     private float dirX;
+    private bool flip = true;
     private enum MovementState { idle, running, jumping, falling };
 
     private Animator anim;
-    private SpriteRenderer sprite;
+    // private SpriteRenderer sprite;
     private Rigidbody2D rb;
     private BoxCollider2D coll;
 
@@ -34,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        // sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         trailRenderer = GetComponent<TrailRenderer>();
     }
@@ -58,12 +59,20 @@ public class PlayerMovement : MonoBehaviour
         if (dirX > 0f)
         {
             state = MovementState.running;
-            sprite.flipX = false;
+            if (!flip)
+            {
+                FlipCharacter();
+            }
+            // sprite.flipX = false;
         }
         else if (dirX < 0f)
         {
             state = MovementState.running;
-            sprite.flipX = true;
+            if (flip)
+            {
+                FlipCharacter();
+            }
+            // sprite.flipX = true;
         }
         else
         {
@@ -139,6 +148,13 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashTime);
         trailRenderer.emitting = false;
         isDashing = false;
+    }
+
+    // flip character
+    private void FlipCharacter()
+    {
+        flip = !flip;
+        transform.Rotate(0, 180, 0);
     }
 
 }
