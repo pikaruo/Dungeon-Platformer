@@ -139,3 +139,6 @@ MonoBehaviour:
   speed: 20
   lifetime: 1
   rb: {fileID: 13199276597342495}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64

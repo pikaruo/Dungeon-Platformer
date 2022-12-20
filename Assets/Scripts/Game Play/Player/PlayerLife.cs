@@ -14,6 +14,7 @@ public class PlayerLife : MonoBehaviour
     private SpriteRenderer sprite;
     private Rigidbody2D rb;
 
+    [SerializeField] GameObject playerGameObject;
     [SerializeField] AudioSource deathAudio;
     [SerializeField] AudioSource savePointAudio;
 
