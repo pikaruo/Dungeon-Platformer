@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - TriggerObstacle
   - SavePoint
+  - Attack
   layers:
   - Default
   - TransparentFX
