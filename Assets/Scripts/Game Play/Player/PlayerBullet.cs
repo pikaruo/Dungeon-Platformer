@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-
-
     [SerializeField] float speed = 10f;
     [SerializeField] int lifetime = 2;
 
     private float timer;
     [SerializeField] Rigidbody2D rb;
-
+    [SerializeField] LayerMask layerMask;
     private void Start()
     {
         rb.velocity = transform.right * speed;
@@ -33,6 +31,9 @@ public class PlayerBullet : MonoBehaviour
         {
             Destroy(collider.gameObject);
         }
-        Destroy(gameObject);
+        if (((1 << collider.gameObject.layer) & layerMask) != 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
