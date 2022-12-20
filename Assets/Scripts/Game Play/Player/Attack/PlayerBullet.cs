@@ -27,11 +27,11 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(collider.gameObject);
-        }
-        if (((1 << collider.gameObject.layer) & layerMask) != 0)
+        // if (collider.gameObject.CompareTag("Enemy"))
+        // {
+        //     Destroy(collider.gameObject);
+        // }
+        if (((1 << collider.gameObject.layer) & layerMask) != 0 || collider.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }
