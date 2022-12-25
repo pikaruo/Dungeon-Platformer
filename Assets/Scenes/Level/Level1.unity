@@ -59225,6 +59225,7 @@ MonoBehaviour:
   playerGameObject: {fileID: 1884287617}
   deathAudio: {fileID: 1471879511}
   savePointAudio: {fileID: 1120597095}
+  fallVelocity: -30
 --- !u!96 &1884287632
 TrailRenderer:
   serializedVersion: 2
