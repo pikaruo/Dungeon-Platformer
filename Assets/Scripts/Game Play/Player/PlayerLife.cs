@@ -18,6 +18,8 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] AudioSource deathAudio;
     [SerializeField] AudioSource savePointAudio;
 
+    [Header("Fall Variable"), SerializeField] float fallVelocity = -25f;
+
     private Vector2 respownPoint;
 
     void Start()
@@ -28,6 +30,13 @@ public class PlayerLife : MonoBehaviour
         respownPoint = transform.position;
 
         totalLife.text = "Life : " + maxLife;
+    }
+    private void Update()
+    {
+        if (rb.velocity.y < fallVelocity && GetComponent<PlayerMovement>().IsGrounded())
+        {
+            Die();
+        }
     }
 
     // player mati jika tertabrak musuh
