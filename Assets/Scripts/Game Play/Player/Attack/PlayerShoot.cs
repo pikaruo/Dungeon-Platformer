@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
 
+    [Header("Shoot Control")]
     [SerializeField] int maxAmmo = 10, currentAmmo;
-
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] TMP_Text totalAmmo;
@@ -25,6 +25,7 @@ public class PlayerShoot : MonoBehaviour
         totalAmmo.text = $"Ammo : {currentAmmo}/{maxAmmo}";
     }
 
+    // mengatur posisi peluru keluar
     private void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
