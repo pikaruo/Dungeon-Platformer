@@ -59043,7 +59043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2011145637
 Transform:
   m_ObjectHideFlags: 0
@@ -59199,6 +59199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 10
+  hideTextTime: 2
   playerBullet: {fileID: 0}
   reward: {fileID: 2011145642}
   killEnemyAudio: {fileID: 2064788215}
@@ -59413,7 +59414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1919492278804544034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59669,6 +59670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 10
+  hideTextTime: 2
   playerBullet: {fileID: 13199276597342496, guid: 15da02d26ce87ca49b71a3a6dd297169, type: 3}
   reward: {fileID: 1919492279809536632}
   killEnemyAudio: {fileID: 2064788215}
@@ -60406,6 +60408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 10
+  hideTextTime: 2
   playerBullet: {fileID: 13199276597342496, guid: 15da02d26ce87ca49b71a3a6dd297169, type: 3}
   reward: {fileID: 3744712790624327097}
   killEnemyAudio: {fileID: 2064788215}
