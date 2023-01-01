@@ -51,11 +51,12 @@ public class EnemyPatrol : MonoBehaviour
         rb.velocity = new Vector2(enemySpeed, rb.velocity.y);
     }
 
+    // membalikkan enemy
     private void Flip()
     {
         enemyPatrol = false; //set enemy status patrol false
         // tranfom localScale.x by -1
-        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        transform.Rotate(0, 180, 0);
         enemySpeed *= -1;
         enemyPatrol = true; //set enemy status patrol true
     }
