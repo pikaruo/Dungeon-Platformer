@@ -8,7 +8,7 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] float radius; //value checking ground
 
     [HideInInspector]
-    public bool enemyPatrol; //status enemy patrol
+    private bool enemyPatrol; //status enemy patrol
     private bool enemyTurn; //status enemy turn
 
     [SerializeField] Rigidbody2D rb; //enemy rigidbody
